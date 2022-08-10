@@ -1,0 +1,12 @@
+/* pages/login/login.wxss */
+
+.container {
+  background-color: beige;
+  display: flex;
+
+}
+
+.logo {
+
+}
+

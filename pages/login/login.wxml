@@ -1,0 +1,9 @@
+<!--pages/login/login.wxml-->
+
+<view class="container">
+
+  <image class="logo" src="" />
+  <view class="wechat">微信登录</view>
+  <view class="douban">已有豆瓣帐号登录</view>
+</view>
+  
