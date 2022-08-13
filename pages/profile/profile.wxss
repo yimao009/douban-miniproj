@@ -7,6 +7,18 @@
     align-items: center;
 }
 
+.login-wrapper .login {
+  color: #1E4826;
+  font-size: 45rpx;
+  background-color: #fff;
+  width: 350rpx;
+  border-radius: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  box-shadow: 2rpx 2rpx 10rpx 0 rgb(131, 19, 19);
+}
+
 /* begin */
 .items-wrapper {
   margin-top: 30rpx;
@@ -51,7 +63,6 @@
   font-size: 28rpx;
 }
 
-
 .item .icon {
   width: 108rpx;
   height: 108rpx;
@@ -90,6 +101,7 @@
 .info .right {
   display: flex;
   align-items: center;
+  background-color: red;
 }
 
 .info .right .text {
@@ -117,17 +129,6 @@
   top: 0;
   width: 100%;
   height: 100%;
-}
-
-.login-wrapper .login {
-    color: #1E4826;
-    font-size: 45rpx;
-    background-color: #fff;
-    width: 350rpx;
-    border-radius: 30rpx;
-    height: 100rpx;
-    line-height: 100rpx;
-    text-align: center;
 }
 
 .version {

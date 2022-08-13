@@ -15,68 +15,29 @@
             </view>
         </view>
 
-        <view class="items">
-            <view class="item">
-                <image class="icon" src="/assets/imgs/ic_cat_movie.png"  />
+        <view class="items" >
+          <view class="item" wx:for="{{items}}" wx:key="unique">
+                <image class="icon" src="/assets/imgs/{{ item.icon }}"  />
                 <view class="info-wrapper">
                     <view class="info">
                         <view class="left">
-                            <view class="top">观影分析</view>
+                            <view class="top">{{ item.title+index }}</view>
                             <view class="bottom">
-                                <view class="count">0</view>
-                                看过
+                                <view class="count">{{ item.count }}</view>
+                                {{ item.has }}
                             </view>
                         </view>
-                        <view class="right">
-                            <text class="text">标记10部影片\n开启观影分析</text>
+                        <view data-index="{{index }}" class="right" id="item - {{ index }}" bind:tap="begin">
+                            <text class="text">{{ item.mark }}</text>
                             <view class="begin">立即开启</view>
                             <view class="arrow"></view>
                         </view>
                     </view>
-                    <view class="divider"></view>
+                    <view class="divider" wx:if="{{index!=items.length}}"></view>
                 </view>
-            </view>
+          </view>
 
-            <view class="item">
-                <image class="icon" src="/assets/imgs/ic_cat_book.png"  />
-                <view class="info-wrapper">
-                    <view class="info">
-                        <view class="left">
-                            <view class="top">读书分析</view>
-                            <view class="bottom">
-                                <view class="count">0</view>
-                                读过
-                            </view>
-                        </view>
-                        <view class="right">
-                            <text class="text">标记10本书\n开启读书分析</text>
-                            <view class="begin">立即开启</view>
-                            <view class="arrow"></view>
-                        </view>
-                    </view>
-                    <view class="divider"></view>
-                </view>
-            </view>
-
-            <view class="item">
-                <image class="icon" src="/assets/imgs/ic_cat_music.png"  />
-                <view class="info-wrapper">
-                    <view class="info">
-                        <view class="left">
-                            <view class="top">音乐分析</view>
-                            <view class="bottom">
-                                <view class="count">0</view>
-                                听过
-                            </view>
-                        </view>
-                        <view class="right">
-                            <text class="text">标记10张唱片\n开启音乐分析</text>
-                            <view class="begin">立即开启</view>
-                            <view class="arrow"></view>
-                        </view>
-                    </view>
-                 </view>
-            </view>
+            
         </view>
     </view>
 
