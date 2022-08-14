@@ -1,6 +1,7 @@
 <!--pages/profile/profile.wxml-->
 
-<view>
+<view class="container">
+  <view>
     <view class="login-wrapper">
         <view class="login">登录</view>
         <image src="/assets/imgs/bg_mine_login.png" mode="aspectFill"/>
@@ -33,16 +34,15 @@
                             <view class="arrow"></view>
                         </view>
                     </view>
-                    <view class="divider" wx:if="{{index!=items.length}}"></view>
+                    <view class="divider" wx:if="{{ index != items.length-1 }}"></view>
                 </view>
           </view>
 
             
         </view>
     </view>
-
-
-    
-    <view class="version">版本1.0.66</view>
+  </view>
+  
+  <view class="version">版本1.0.66</view>
 </view>
   

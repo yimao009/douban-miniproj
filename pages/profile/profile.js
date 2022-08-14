@@ -42,7 +42,19 @@ Page({
     }
     // console.log(evt.currentTarget.dataset.index);
     // console.log(ent);
+
+    const _locationChangeErrFn = function(res) {
+      console.log("error = " + res );
+    }
+
+    const _locationChangeFn = function(res) {
+      console.log(res);
+    }
+    wx.onLocationChangeError(_locationChangeErrFn);
+    wx.onLocationChange(_locationChangeFn);
+    wx.offLocationChange(_locationChangeFn);
     
+  
   },
 
   /**
