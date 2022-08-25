@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/profile/profile",
     "pages/login/login",
     "pages/agreement/agreement"
@@ -15,5 +16,10 @@
   "requiredPrivateInfos": [
     "onLocationChange",
     "offLocationChange"
-  ]
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的演示"
+    }
+  }
 }

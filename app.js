@@ -1,17 +1,39 @@
 // app.js
 App({
-  onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+  onLaunch() {
+    wx.db = {};
+
+    const ToastTypeNormal = 0;
+    const ToastTypeSuccess = 1;
+    const ToastTypeError = 2;
+    let commonToast = (title, type, duration=1500) => {
+      let options = {
+        title: title,
+        icon: 'none',
+        duration: duration,
+      };
+      if(ToastTypeSuccess == type) {
+        options.icon = 'success';
+      } else if(ToastTypeError == type) {
+        options.image = '/assets/imgs/upsdk_cancel_normal.png';
       }
-    })
+      wx.showToast(options)
+    };
+
+    wx.db.toast = (title, duration) => {
+      commonToast(title, ToastTypeNormal, duration);
+    };
+
+    wx.db.toastError = (title, duration = 1500) => {
+      commonToast(title, ToastTypeError, duration);
+    };
+
+    wx.db.toastSuccess = (title, duration = 1500) => {
+      commonToast(title, ToastTypeSuccess, duration);
+    };
+    
+
   },
   globalData: {
     userInfo: null
