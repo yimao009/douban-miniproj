@@ -15,8 +15,10 @@
   "sitemapLocation": "sitemap.json",
   "requiredPrivateInfos": [
     "onLocationChange",
-    "offLocationChange"
+    "chooseLocation",
+    "getLocation"
   ],
+  
   "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的演示"

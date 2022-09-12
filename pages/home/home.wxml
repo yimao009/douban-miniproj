@@ -1,15 +1,51 @@
 <!--pages/home/home.wxml-->
 
 <view>
-  <view class="header">
-    <view class="search-wrapper">
+  <view class="search-wrapper">
+    <view class="search">
       <image src="/assets/imgs/ic_search.png"></image>
       搜索
     </view>
-  
   </view>
-  <view class="main">
-  
-  
+
+  <view class="main-wrapper">
+    <view class="row">
+      <view class="title-wrapper">
+        <view class="title">影院热映</view>
+        <view class="more">查看更多<view class="arrow"></view>
+        </view>
+      </view>
+
+      <scroll-view scroll-x="true" class="items">
+        <view wx:for="{{ 20 }}" class="item" wx:for-item="movie" wx:key="unique">
+          <image class="photo" src="https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2875299554.jpg"></image>
+          <view class="title">我和我的祖国</view>
+
+          <view class="score">
+            <block wx:if="{{movie.stars}}">
+              <view class="stars">
+                <block wx:for="{{ [1,1,0,0,0] }}" wx:for-item="star" wx:key="unique">
+                  <image wx:if="{{star == 1 }}" class="star" src="/assets/imgs/rating_star_small_on.png" />
+                  <image wx:elif="{{star == 0.5 }}" class="star" src="/assets/imgs/rating_star_small_half.png" />
+                  <image wx:else class="star" src="/assets/imgs/rating_star_small_off.png" />
+                </block>
+
+                <!-- 另一种方法 -->
+                <!-- <image wx:for="{{movie.star.on}"  class="star" src="/assets/imgs/rating_star_small_on.png" />
+              <image wx:if="{{movie.star.half}"  class="star" src="/assets/imgs/rating_star_small_half.png" />
+              <image wx:if="{{movie.star.off}" class="star" src="/assets/imgs/rating_star_small_off.png" /> -->
+              </view>
+              8.9
+            </block>
+
+            <block wx:else> 暂无评分 </block>
+
+          </view>
+
+        </view>
+      </scroll-view>
+
+    </view>
+
   </view>
 </view>
